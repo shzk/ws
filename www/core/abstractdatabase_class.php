@@ -45,7 +45,7 @@ abstract class AbstractDataBase
         if ($params) {
             $offset = 0;
             $len_sq = strlen($this->sq);
-            for ($i = 0; $i < count($params); i++) {
+            for ($i = 0; $i < count($params); $i++) {
                 $pos = strpos($query, $this->sq, $offset);
                 if (is_null($params[$i])) $arg = 'NULL';
                 else $arg = "'" . $this->mysqli->real_escape_string($params[$i]) . "'";
